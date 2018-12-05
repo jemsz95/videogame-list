@@ -1,13 +1,14 @@
 package com.tabletopsoft.videogamelist.data
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Query
+import io.reactivex.Observable
 
 @Dao
 interface VideoGameDao {
     @Query(value = "SELECT * FROM video_games")
-    fun all() : LiveData<List<VideoGame>>
+    fun all() : Observable<List<VideoGame>>
 
     @Query(
         value = "SELECT vg.* " +
@@ -16,11 +17,11 @@ interface VideoGameDao {
                 "ON vg.id = uvg.video_game_id " +
                 "WHERE uvg.user_id = :id"
     )
-    fun user(id: Int) : LiveData<List<VideoGame>>
+    fun user(id: Int) : Observable<List<VideoGame>>
 
     @Query(value = "SELECT * FROM video_games WHERE publisher_id = :id")
-    fun publisher(id: Int) : LiveData<List<VideoGame>>
+    fun publisher(id: Int) : Observable<List<VideoGame>>
 
     @Query(value = "SELECT * FROM video_games WHERE id = :id")
-    fun find(id: Int) : VideoGame
+    fun find(id: Int) : Observable<VideoGame>
 }

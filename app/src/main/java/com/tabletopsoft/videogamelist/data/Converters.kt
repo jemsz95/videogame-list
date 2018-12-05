@@ -1,6 +1,6 @@
 package com.tabletopsoft.videogamelist.data
 
-import android.arch.persistence.room.TypeConverter
+import androidx.room.TypeConverter
 import java.net.URL
 import java.util.Date
 

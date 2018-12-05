@@ -1,8 +1,8 @@
 package com.tabletopsoft.videogamelist.data
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.ForeignKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
 
 @Entity(
     tableName = "user_video_game",

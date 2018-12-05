@@ -2,16 +2,10 @@ package com.tabletopsoft.videogamelist
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -26,6 +20,17 @@ class HomeTabFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val app = activity?.application
+
+        if(app is VGLApplication) {
+            val vgDao = app.database?.videoGameDao()
+
+            val disposable = vgDao?.user(10)?.subscribe {
+
+            }
+        }
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -37,7 +42,7 @@ class HomeTabFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_home_tab, container, false)
     }
 
 
@@ -50,7 +55,12 @@ class HomeTabFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment HomeTabFragment.
          */
-        // TODO: Rename and change types and number of parameters
+
+        // TODO: Rename parameter arguments, choose names that match
+        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+        private const val ARG_PARAM1 = "param1"
+        private const val ARG_PARAM2 = "param2"
+
         @JvmStatic
         fun newInstance() =
             HomeTabFragment().apply {

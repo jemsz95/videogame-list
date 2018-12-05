@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tabletopsoft.videogamelist.HomeTabFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home_tab" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_list"
+            app:destination="@id/navigation_list" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_games"
+            app:destination="@id/navigation_games" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.tabletopsoft.videogamelist.ListTabFragment"
+        android:label="ListTabFragment">
+        <action
+            android:id="@+id/action_navigation_list_to_videoGameEntryFragment"
+            app:destination="@id/videoGameEntryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.tabletopsoft.videogamelist.ProfileTabFragment"
+        android:label="profile_tab_fragment"
+        tools:layout="@layout/profile_tab_fragment" />
+    <fragment
+        android:id="@+id/navigation_games"
+        android:name="com.tabletopsoft.videogamelist.GamesTabFragment"
+        android:label="games_tab_fragment"
+        tools:layout="@layout/games_tab_fragment">
+        <action
+            android:id="@+id/action_navigation_games_to_videoGameEntryFragment"
+            app:destination="@id/videoGameEntryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoGameEntryFragment"
+        android:name="com.tabletopsoft.videogamelist.VideoGameEntryFragment"
+        android:label="fragment_video_game_entry"
+        tools:layout="@layout/fragment_video_game_entry" />
+</navigation>
