@@ -1,14 +1,11 @@
-package com.tabletopsoft.videogamelist
+package com.tabletopsoft.videogamelist.activities
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
+import com.tabletopsoft.videogamelist.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val navController = findNavController(R.id.navHost)
+        setContentView(R.layout.activity_main)
+
+        val navController = findNavController(R.id.nav_host)
 
         bottomNav.setupWithNavController(navController)
 

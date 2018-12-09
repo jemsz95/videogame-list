@@ -17,17 +17,5 @@ class Converters {
         fun toDate(date: Long) : Date {
             return Date(date)
         }
-
-        @TypeConverter
-        @JvmStatic
-        fun fromURL(url: URL) : String {
-            return url.toExternalForm()
-        }
-
-        @TypeConverter
-        @JvmStatic
-        fun toURL(url: String) : URL {
-            return URL(url)
-        }
     }
 }

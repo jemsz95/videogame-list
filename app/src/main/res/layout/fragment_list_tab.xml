@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/game_list_fragment"
-        android:name="com.tabletopsoft.videogamelist.VideoGameListFragment"
+        android:name="com.tabletopsoft.videogamelist.fragments.VideoGameListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_video_game_list"/>

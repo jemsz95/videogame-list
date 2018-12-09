@@ -1,6 +1,5 @@
 package com.tabletopsoft.videogamelist.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import io.reactivex.Observable

@@ -1,10 +1,11 @@
-package com.tabletopsoft.videogamelist
+package com.tabletopsoft.videogamelist.adapters
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.tabletopsoft.videogamelist.R
 
 
 import com.tabletopsoft.videogamelist.data.VideoGame
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.list_item_video_game.view.*
 class VideoGameRecyclerViewAdapter(
     private val mValues: List<VideoGame>,
     private val mListener: ((VideoGame) -> Unit)?
-) : androidx.recyclerview.widget.RecyclerView.Adapter<VideoGameRecyclerViewAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<VideoGameRecyclerViewAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
 

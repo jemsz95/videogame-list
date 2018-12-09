@@ -1,4 +1,4 @@
-package com.tabletopsoft.videogamelist
+package com.tabletopsoft.videogamelist.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
